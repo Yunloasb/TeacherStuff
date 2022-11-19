@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible"content="IE=edge">
+
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+        <title>Teacher Stuff</title>
+<link href='https://fonts.googleapis.com/css?family=Akaya Telivigala' rel='stylesheet'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    
+
+
+ body{
+     margin:0;
+     padding:0;
+     display:flex;
+     background-image:url("gallery/edu8.jpg");
+     background-attachment:fixed;
+     background-size:cover;
+     background-position:none;
+     font-family:Sans-Serif;
+    }
+              
+header{
+          border-radius:0 0 20px 20px;
+          background-color:RGB(216 240 247);
+          box-shadow:-3px -3px 9px #aaa9a9a2,3px 3px 7px rgba(147,149,151,0.9);
+          color:rgba(12,233,233,.83);
+          padding:0;
+          margin:0;
+          overflow:hidden;
+          width:100%;
+          position:fixed;
+          z-index:10;
+      }
+header video{
+           max-width:150px;
+           height:auto;
+           float:left;
+           border-radius:50px;
+           margin:0px;  
+         }
+ header h1{
+          text-shadow:-3px -3px 3px #aaa9a9a2,2px 2px 2px rgba(147,149,151,0.9);
+          padding:0;
+          margin:0;
+          font-size:3rem;
+          text-align:center;
+       
+}
+header ul{ list-style-type:none;}
+header li a{
+            text-decoration:none;
+            text-shadow:-3px -3px 9px #aaa9a9a2,2px 2px 2px rgba(147,149,151,0.9);
+            font-size:1.8rem;
+            text-align:center;
+            display:block;
+            color:rgba(12,233,233,.9);
+            padding:0px;
+            margin:0;
+            overflow:hidden
+            position:fixed;
+            z-index:10;
+              
+}
+                   
+ 
+ .navbar ul {
+            list-style-type:none;
+            border-radius:20px;
+            background-color:RGB(12 233 233);
+            box-shadow:-0px -0px 2px #aaa9a9a2,3px 3px 7px rgba(147,149,151,0.671);
+            color:#fff;
+            color:white;
+            padding:0px;
+            margin:0;
+            overflow:hidden;
+            top:150px;
+            width:100%;
+            position:fixed;
+            z-index:10;
+     
+}
+
+.navbar li {
+            float:left;
+
+}
+ 
+.navbar li a {
+            text-decoration:none; 
+            padding:10px 25px;
+            display:block;
+            color:black;   
+}        
+
+.navbar li a:hover,
+.applink li a:hover,
+.teacherneed li a:hover,
+.reports li a:hover,
+.display1 li a:hover,
+.display2 li a:hover,
+.forms li a:hover,
+.tstuff1 li a:hover,
+.tstuff2 li a:hover,
+.sstuff1 li a:hover,
+.sstuff2 li a:hover{
+            
+            background-color:RGB(230 20 103);
+            color:white;
+            border:none;
+            border-radius:50px;
+            transition:.5s ease-in-out;
+}
+ 
+.navbar li a.active{
+            background-color:RGB(204 230 20);
+            color:white;
+            border:none;
+            border-radius:50px;
+            transition:.5s ease-in-out;
+}
+
+ .applink h3,
+ .teacherneed h3,
+ .reports h3,
+ .display1 h3,
+ .forms h3,
+ .tstuff1 h3,
+ .sstuff1 h3 {
+        font-family:'Akaya Telivigala';
+        background-color:rgba(41,39,39,0.9);
+        box-shadow:-3px -3px 9px #aaa9a9a2,3px 3px 7px rgba(147,149,151,0.571); 
+        color:#10EEEE;
+        position:absolute;
+        padding:5px;
+        border:none;
+        border-radius:20px 20px 0 0 ;
+        text-align:center;
+        }
+.applink h3{
+           width:210px;
+           top:190px;
+           left:10px;
+          }
+
+.applink{
+        float:left;
+       }
+
+ 
+
+ .applink ul,
+.teacherneed ul,
+.reports ul,
+.forms ul {
+      list-style-type:none;
+      border-radius:0 0 20px 20px;
+      background-color:rgba(41,39,39,0.7);
+      box-shadow:-3px -3px 9px #aaa9a9a2,3px 3px 7px rgba(147,149,151,0.571);
+      padding:0;
+      margin:0;
+      position:absolute;
+      font-family:'Akaya Telivigala';
+      }
+.applink ul{
+           width:220px;
+           top:240px;
+           left:10px;
+       }
+
+.applink li a,
+.teacherneed li a,
+.reports li a,
+.display1 li a,
+.display2 li a,
+.forms li a,
+.tstuff1 li a,
+.tstuff2 li a,
+.sstuff1 li a,
+.sstuff2 li a{
+             text-decoration:none;
+             fontsize:1.2em;
+             color:#10EEEE;
+             padding:10px;
+             display:block;
+           }
+
+
+
+.teacherneed h3 {
+        
+        width:390px;
+        top:190px;
+        left:245px;
+}
+
+.teacherneed{
+        float:left;
+          }
+
+
+.teacherneed ul{
+           width:400px;
+           top:240px;
+           left:245px;}
+
+.reports,.forms{
+          float:left;
+          width:195px;
+          height:180px;
+          
+           }
+.reports h3{
+           width:190px;
+           top:462px;
+           left:245px;
+          }
+
+
+.reports ul,
+.forms ul{
+          width:200px;
+          top:512px; 
+         }
+.reports ul{
+          left:245px;
+          }
+
+.forms h3{
+           width:190px;
+           top:462px;
+           left:455px;
+          }
+
+
+.forms ul{
+      left:455px;
+    }
+
+
+.dispay1,.display2,
+.sstuff1,.sstuff2,
+.tstuff1,.tstuff2{
+          float:left;
+         
+          
+           }
+.display1 h3{
+           width:460px;
+           top:660px;
+           left:10px;
+          }
+
+
+.display1 ul,.display2 ul,
+.tstuff1 ul,.tstuff2 ul,
+.sstuff1 ul,.sstuff2 ul{
+                     list-style-type:none;
+                     top:710px;
+                     background-color:rgba(41,39,39,0.7);
+                     box-shadow:-3px -3px 9px #aaa9a9a2,3px 3px 7px rgba(147,149,151,0.71);
+                     width:235px;
+                     padding:0;
+                     margin:0;
+                    position:absolute;
+                    text-align:center;
+                    font-family:'Akaya Telivigala';
+                  }
+
+.display1 ul{
+            border-radius:0 0 0 20px;
+            left:10px;
+          }
+.display2 ul{
+           border-radius:0 0 20px 0; 
+           left:245px;
+           }
+
+
+.tstuff1 h3{
+           width:460px;
+           top:660px;
+           left:500px;
+          }
+
+.tstuff1 ul{
+            border-radius:0 0 0 20px;
+            left:500px;
+          }
+.tstuff2 ul{
+           border-radius:0 0 20px 0; 
+           left:735px;
+           }
+
+
+.sstuff1 h3{
+           width:460px;
+           top:660px;
+           left:990px;
+          }
+
+.sstuff1 ul{
+            border-radius:0 0 0 20px;
+            left:990px;
+          }
+.sstuff2 ul{
+           border-radius:0 0 20px 0; 
+           left:1225px;
+           }
+
+
+/* Slideshow container */
+.slideshow-container{
+                  width: 800px;
+                  height:440px;
+                  top:210px;
+                  left:670px;
+                  border-radius:40px 0 40px 0;
+                  background-color:rgba(41,39,39,0.7);
+                  box-shadow:-3px -3px 9px #aaa9a9a2,3px 3px 7px rgba(147,149,151,0.571);
+                  color:#fff;
+                  box-sizing:border-box
+                  transform:translate(-50%,-50%);
+                  position:absolute;
+                  padding:5px;
+                  margin: auto;
+                }
+
+/* Hide the images by default */
+.mySlides {
+         display: none;
+}
+.mySlides img{
+         border-radius:40px 0 40px 0;
+         height:440px;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor:pointer;
+  position: absolute;
+  top: 52%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: cyan;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select:none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+/* Tooltip container */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  color:#10EEEE;
+  text-decoration:none;
+             fontsize:1.2em;
+             
+             padding:10px;
+             display:block;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+   width: 150px;
+  bottom: 100%;
+  left: 51%;
+  margin-left: -60px;
+  visibility: hidden;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px;
+  border-radius: 6px;
+ 
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+}
+.tooltip .tooltiptext a{
+text-decoration:none;
+color: #fff;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+
+</style>
+</head>
+
+<body>
+<header>
+<video loop="true" autoplay="true" controls muted>
+  <source src="sites/logo1.mp4" type="video/mp4">
+</video>
+<h1>MPPS Hanumapuram</h1>
+<ul><li><a href="passwords2.html" target="-blank">28172000904</li><li><a href="Page2.html"></a></li></ul>
+</header>
+        <div class="navbar" id="myTopnav">
+                         <ul>
+                             <li><a class="active" href="index.html">Home</a></li>
+                             <li><a href="https://studentinfo.ap.gov.in/" target="-blank">Student Info</a></li>
+                             <li><a href="https://cse.ap.gov.in/DSE/" target="-blank">CSE</a></li>
+                             <li><a href="https://nadunedu.se.ap.gov.in/STMSWorks/" target="-blank">Nadu Nedu</a></li>
+                             <li><a href="https://nadunedu.se.ap.gov.in/jvk/" target="-blank">JVK</a></li>
+                             <li><a href="http://ammavodihm.apcfss.in/login.html" target="-blank">Ammavodi</a></li>
+                             <li><a href="https://shaalasiddhi.niepa.ac.in/shaalasiddhi/Account/ShaalaSiddhiLogin" target="-blank">Shaala siddhi</a></li>
+                             <li><a href="https://udiseplus.gov.in/ud/home?loginId=1" target="-blank">Udise+</a></li>
+                             <li><a href="https://cfms.ap.gov.in/" target="-blank">CFMS</a></li>
+                             <li><a href="https://pfms.nic.in/Users/LoginDetails/NewLayoutLogin.aspx" target="-blank">PFMS</a></li>                           
+                             <li><a href="https://fitindia.gov.in/login" target="-blank">Fit India</a></li>
+                             <li><a href="https://school.swachhvidyalayapuraskar.com/" target="-blank">Swachh Vidyalaya Puraskar</a></li>
+                            
+                            
+                         </ul>
+      </div>
+
+                             
+        <div class="applink">
+                            <h3>School&All Apps links</h3>
+                        <ul>
+                          <li><a href="https://play.google.com/store/apps/details?id=com.ap.imms">IMMS</a></li>
+                          <li><a href="https://play.google.com/store/apps/details?id=com.ap.schoolattendance">School Attendance</a></li>
+                          <li><a href="https://play.google.com/store/apps/details?id=com.cr_app.vsws_cr_android_app">CR(consistant rhythm)</a></li>
+                          <li><a href="https://play.google.com/store/apps/details?id=com.ap.sims">Academic monitoring</a></li>
+                         <div class="tooltip">Nadu Nedu
+                         <span class="tooltiptext"><a href="https://nadunedu.se.ap.gov.in/stmsworks/Data/STMS_P_2.6.1.apk" target="-blank">APP Link(2.6.1)</a><br>
+                                                   <a href="https://nadunedu.se.ap.gov.in/STMSWorks/Dashboard/STMS_Projectsprogress.aspx" target="-blank">R2.1 Report</a><br>
+                                                   <a href="https://nadunedu.se.ap.gov.in/STMSWorks/Dashboard/SCHOOLS_PROJECT_PROGRESS_REPORT.aspx" target="-blank">R2.17 Report</a> </span>
+                           </div>
+                          
+                          <li><a href="https://play.google.com/store/apps/details?id=in.apcfss.child.jvk">JVK</a></li>
+                          <li><a href="https://play.google.com/store/apps/details?id=in.gov.diksha.app">Diksha</a></li>
+                          <li><a href="https://play.google.com/store/apps/details?id=nps.nps">NPS(PRAN)</a></li>
+                          <li><a href="https://play.google.com/store/apps/details?id=in.apcfss.in.herb.emp">Herb(payslip)</a></li>
+                          <li><a href="https://play.google.com/store/apps/details?id=com.byjus.thelearningapp">BYJU'S</a></li>
+                          <li><a href="">Coming Soon</a></li>     
+       
+                               
+                         </ul>
+          </div>
+                     
+         <div class="teacherneed">
+                             <h3>Employee Services</h3>
+                        <ul>
+                          <li><a href="https://esr.ap.gov.in/Logout.do" target="-blank">ESR</a></li>
+                          <li><a href="https://www.apgli.ap.gov.in./" target="-blank">APGLI</a></li>
+                          <li><a href="https://www.ehs.ap.gov.in/EHSAP/loginAction.do?actionFlag=loginPage&theme=navyblue#" target="-blank">EHS Service</a></li>
+                          <li><a href="https://cra-nsdl.com/CRA/" target="-blank">NPS</a></li>
+                          <li><a href="https://pli.indiapost.gov.in/CustomerPortal/PSLogin.action" target="-blank">PLI online</a></li>
+                          <li><a href="https://herb.apcfss.in/login" target="-blank">Payroll Herb</a></li>
+                         
+                         </ul>
+          </div>
+        <div class="reports">
+                           <h3>Monthly Reports</h3>
+                        <ul>
+                          <li><a href="mothly%20reports/mdm month end report.pdf" target="-blank">MDM Report</a></li>
+                          <li><a href="mothly%20reports/Eggs&Chikki%20Declaration.pdf" target="-blank">Eggs&Chikki</a></li>
+                          <li><a href="mothly%20reports/ayah%20duty%20certificate.pdf" target="-blank">Ayah Duty</a></li>
+                          <div class="tooltip">Online Reports
+                         <span class="tooltiptext"><a href="https://apmdm.apcfss.in/MIDDAYMEALS17/entrySchoolStatusServiceState.htm" target="-blank">MDM Bill status</a><br>
+                                                   <a href="https://scm.ap.gov.in/SCM/shoproanddispatchdetailsfmdm.jsp" target="-blank">Rice Allotment</a><br>
+                                                   <a href="https://apmdm.apcfss.in/MIDDAYMEALS17/entrySchoolMealsTakenData.htm" target="-blank">Daywise Meals taken</a> </span>
+                           </div>
+                          
+                         
+                         </ul>
+        
+             </div>
+         <div class="forms">
+                           <h3>School Forms</h3>
+                        <ul>
+                          <li><a href="School%20forms/Admission%20form%20telugu.pdf" target="-blank">Admission Form(telugu)</a></li>
+                          <li><a href="School%20forms/Admission%20form%20english.pdf" target="-blank">Admission Form(english)</a></li>
+                          <li><a href="School%20forms/HPT%20study%20certificate2.pdf" target="-blank">Study Certificate</a></li>
+                          <li><a href="School%20forms/PC%20grant%20Resolution.pdf" target="-blank">PC Grants Resolution</a></li>
+                         
+                         </ul>
+        
+             </div>
+
+
+<div class="display1">
+              
+               <h3>Notice board</h3>
+     <ul>
+               <li><a href="notice%20board/teachhers%20details.pdf" target="-blank">Teacher Details</a></li>
+               <li><a href="notice%20board/1,2%20TIME%20TABLE.pdf" target="-blank">1,2-Time table</a></li>
+               <li><a href="notice%20board/3%20to%205%20TIME%20TABLE.pdf" target="-blank">3-5 Time table</a></li>
+               <li><a href="notice%20board/MDM%20Menu.pdf" target="-blank">MDM Menu</a></li>
+               <li><a href="notice%20board/Exams%20Schedule%202022-23.pdf" target="-blank">Exams Schedule</a></li>
+          </ul>
+</div>
+<div class="display2">
+              
+          <ul>
+              <li><a href="notice%20board/School%20assembly.pdf" target="-blank">School Assembly</a></li>
+              <li><a href="notice%20board/my%20school%20plan.pdf" target="-blank">School plan</a></li>
+              <li><a href="notice%20board/Needs&%20Targets%20of%20school.pdf" target="-blank">Needs and Targets</a></li>
+              <li><a href="notice%20board/Contacts%20for%20School.pdf"target="-blank">Contact Details for School</a></li>
+              <li><a href="notice%20board/instructions%20to%20CCH.pdf" target="-blank">CCH&Ayah instructions</a></li>
+</ul>
+             </div>
+
+<div class="tstuff1">
+              
+               <h3>Teacher Stuff</h3>
+     <ul>
+               <li><a href="" target="-blank">Annual Plans</a></li>
+               <li><a href="" target="-blank">Ananda vedika </a></li>
+               <li><a href="Teacher%20Stuff/Classroom%20Commands.pdf" target="-blank">Classroom Commands</a></li>
+               <li><a href="" target="-blank">Coming Soon</a></li>
+               <li><a href="" target="-blank">Coming Soon</a></li>
+               
+          </ul>
+</div>
+<div class="tstuff2">
+              
+          <ul>
+               <li><a href="" target="-blank">TaRL</a></li>
+               <li><a href="" target="-blank">Coming Soon</a></li>
+               <li><a href="" target="-blank">Coming Soon</a></li>
+               <li><a href="" target="-blank">Coming Soon</a></li>
+               <li><a href="" target="-blank">Coming Soon</a></li>
+</ul>
+             </div>
+
+<div class="sstuff1">
+              
+               <h3>Student Stuff</h3>
+     <ul>
+               <li><a href="" target="-blank">Coming Soon</a></li>
+               <li><a href="" target="-blank">Coming Soon</a></li>
+               <li><a href="" target="-blank">Coming Soon</a></li>
+               <li><a href="" target="-blank">Coming Soon</a></li>
+               <li><a href="" target="-blank">Coming Soon</a></li>
+          </ul>
+</div>
+<div class="sstuff2">
+              
+          <ul>
+              <li><a href="" target="-blank">Coming Soon</a></li>
+               <li><a href="" target="-blank">Coming Soon</a></li>
+               <li><a href="" target="-blank">Coming Soon</a></li>
+               <li><a href="" target="-blank">Coming Soon</a></li>
+               <li><a href="" target="-blank">Coming Soon</a></li>
+</ul>
+             </div>
+
+
+<div class="slideshow-container">
+
+  <div class="mySlides fade">
+    <img src="gallery/1.jpg" style="width:100%"></div>
+
+  <div class="mySlides fade">
+   <img src="gallery/2.jpg" style="width:100%" ></div>
+    
+
+  <div class="mySlides fade">
+    <img src="gallery/3.jpg" style="width:100%" ></div>
+
+<div class="mySlides fade">
+    <img src="gallery/4.jpg" style="width:100%" ></div>
+
+<div class="mySlides fade">
+    <img src="gallery/5.jpg" style="width:100%" ></div>
+
+<div class="mySlides fade">
+    <img src="gallery/6.jpg" style="width:100%" ></div>
+
+<div class="mySlides fade">
+    <img src="gallery/7.jpg" style="width:100%" ></div>
+
+<div class="mySlides fade">
+    <img src="gallery/8.jpg" style="width:100%" ></div>
+
+<div class="mySlides fade">
+    <img src="gallery/9.jpg" style="width:100%" ></div>
+
+<div class="mySlides fade">
+    <img src="gallery/10.jpg" style="width:100%" ></div>
+
+<div class="mySlides fade">
+    <img src="gallery/11.jpg" style="width:100%" ></div>
+
+<div class="mySlides fade">
+    <img src="gallery/12.jpg" style="width:100%" ></div>
+
+<div class="mySlides fade">
+    <img src="gallery/13.jpg" style="width:100%" ></div>
+
+<div class="mySlides fade">
+    <img src="gallery/14.jpg" style="width:100%" ></div>
+
+<div class="mySlides fade">
+    <img src="gallery/15.jpg" style="width:100%" ></div>
+
+<div class="mySlides fade">
+    <img src="gallery/16.jpg" style="width:100%" ></div>
+<div class="mySlides fade">
+    <img src="gallery/17.jpg" style="width:100%" ></div>
+<div class="mySlides fade">
+    <img src="gallery/18.jpg" style="width:100%" ></div>
+<div class="mySlides fade">
+    <img src="gallery/19.jpg" style="width:100%" ></div>
+<div class="mySlides fade">
+    <img src="gallery/20.jpg" style="width:100%" ></div>
+<div class="mySlides fade">
+    <img src="gallery/21.jpg" style="width:100%" ></div>
+<div class="mySlides fade">
+    <img src="gallery/22.jpg" style="width:100%" ></div>
+<div class="mySlides fade">
+    <img src="gallery/23.jpg" style="width:100%" ></div>
+<div class="mySlides fade">
+    <img src="gallery/24.jpg" style="width:100%" ></div>
+
+
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+
+<script>
+     let slideIndex = 0;
+     showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+                       }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}
+  slides[slideIndex-1].style.display = "block";
+  setTimeout(showSlides, 4000); // Change image every 4 seconds
+     }
+
+</script>
+<script>
+/* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "navbar") {
+    x.className += " responsive";
+  } else {
+    x.className = "navbar";
+  }
+}
+</script>
+
+</body>
+</html>
