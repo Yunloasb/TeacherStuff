@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Teacher needs</title>
+<link rel="icon" type="image/x-icon" href="gallery/teachlogo31.png">
+<link rel="stylesheet"  type="text/css" href="style.css">
+<link href='https://fonts.googleapis.com/css?family=Akaya Telivigala' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap' rel='stylesheet'>
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Ubuntu',sans-serif;
+   }
+
+body{
+    min-height:100vh;
+    background:#fff;
+   }
+
+.navigation{
+          position:fixed;
+          inset:20px;
+          background:#10EEEE;
+          width:80px;
+          border-left:10px solid #287bff;
+          border-radius:20px;
+          overflow:hidden;
+          transition:0.5s;
+         }
+
+.navigation.active{
+              width:200px;
+              border-radius:20px;
+             }
+
+
+.navigation ul{
+            position:absolute;
+            top:0;
+            left:0;
+            width:100%;
+           }
+
+.navigation ul li {
+               position:relative;
+               list-style:none;
+               width:100%;
+               border-top-left-radius:30px;
+               border-bottom-left-radius:30px;
+              }
+
+.navigation ul li:hover{
+                background:#fff;
+                }
+.navigation ul li a.active{
+                      background:#fff;
+                      border-top-left-radius:30px;
+                      border-bottom-left-radius:30px;
+                    }
+
+
+.navigation ul li:nth-child(1){
+                     top:20px;
+                     margin-bottom:40px;
+                     background:none;
+                   }
+
+.navigation ul li a{
+                position:relative;
+                display:block;
+                width:100%;
+                display:flex;
+                text-decoration:none;
+                color:#fff;
+               }
+
+.navigation ul li:hover:not(:first-child) a,
+.navigation ul li a.active{
+             color:#10EEEE;
+             }
+.icon{
+      position:relative;
+      display:block;
+      min-width:60px;
+      height:50px;
+      line-height:60px;
+      text-align:center;
+     }
+.icon ion-icon{
+          font-size:1.75em;
+          }
+
+.title{
+        position:relative;
+        display:block;
+        padding:0 10px;
+        height:50px;
+        line-height:50px;
+        text-align:start;
+        white-space:nowrap;
+      }
+.navigation .closebtn {
+                 position: absolute;
+                 bottom: 0;
+                 right: 25px;
+                 font-size: 36px;
+                 text-align:center;
+             }
+.navigation.active.closebtn{
+position: absolute;
+                 bottom: 0;
+                 right: 25px;
+                 font-size: 36px;
+                 margin-left: 40px;}
+.navigation a {
+              text-decoration:none;
+              color:#fff;}
+              .navigation li {
+               list-style:none;
+               }
+ /*curve outside*/
+.navigation ul li:not(:first-child):hover a::before,
+.navigation ul li a.active::before{
+               content:'';
+               position:absolute;
+               right:0;
+               top:-40px;
+               width:40px;
+               height:40px;
+               background:transparent;
+               border-radius:50%;
+               box-shadow:30px 30px 0 10px #fff;
+               pointer-events:none;
+             }
+
+.navigation ul li:not(:first-child):hover a::after,
+.navigation ul li a.active::after{
+               content:'';
+               position:absolute;
+               right:0;
+               bottom:-40px;
+               width:40px;
+               height:40px;
+               background:transparent;
+               border-radius:50%;
+               box-shadow:30px -30px 0 10px #fff;
+               pointer-events:none;
+               }
+
+#main {
+         margin-left:50px;
+         transition: margin-left .5s;
+         padding: 20px;
+      }
+
+@media screen and (max-height: 450px) {
+  .navigation {padding-top: 15px;}
+  .navigation a {font-size: 18px;}
+
+}
+@media(max-width:992px){
+.navigation{
+           left:0;
+          }
+.navigation.active{
+                left:0;
+                width:200px;
+               }
+.main{
+      width:100%;
+       left:0;
+       }
+.main.active{
+            width:calc(100%-200px);
+            left:200px;
+         }
+}
+
+.menu{
+     position:relative;
+     width:calc(100%-200px);
+     left:300px;
+     height:100%;
+     border-radius:20px;
+   }
+/* Style tab links */
+.tablink {
+
+  background-color: #555;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 20%;
+  border-radius:20px;
+
+}
+
+.tablink:hover {
+            background-color: #777;
+            }
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {  
+            left:300px;
+            color: white;
+            display: none;
+            padding: 100px 20px;
+            height:100%;
+           }
+
+#ESR {background-color:#B8F5F5;}
+#APGLI {background-color: green;}
+#PRAN {background-color: blue;}
+#EHS {background-color: orange;}
+
+
+#ESR,#APGLI,#PRAN,#EHS{
+           border-radius:20px;
+           width:100%;
+           height:100%;
+}
+
+
+/*forms css*/
+.row{
+    display:flex;
+    flex-wrap:wrap;
+    }
+.lists ul li{
+            list-style:circle;
+            }
+.lists ul li a{
+              text-decoration:none;
+              color:#ffff;
+              margin-bottom:5px;
+              weight:900;
+            }
+.lists ul li a:hover{
+                   display:block;
+                   border-radius:10px;
+                   box-shadow:-3px -3px 9px #aaa9a9a2,3px 3px 7px rgba(147,149,151,0.571);
+                   padding:5px;
+                   font-size:1.3em;
+                   color:black;
+                  }
+.lists ul{
+          width:260px;
+          padding:10px 50px 0 0;
+          list-style:none;
+        }
+.lists h3{
+color:black;
+weight:800;
+}
+
+</style>
+</head>
+<body>
+<div id="mySidenav" class="navigation">
+<li><a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a></li>
+   <ul>
+      <li>
+         <a href="index.html">
+            <span class="icon"><img src="gallery/teachlogo3.png" width="50px" height="50px"></span>
+            <span class="title">Teacher Stuff</span>
+         </a>
+      </li>
+       <li>
+           <a  href="all sites.html">
+              <span class="icon"><ion-icon name="logo-web-component"></ion-icon></span>
+             <span class="title">ALL Sites</span>
+           </a>
+       </li>
+        <li>
+         <a href="app links.html">
+            <span class="icon"><ion-icon name="calculator-outline"></ion-icon></span>
+            <span class="title">App Links</span>
+         </a>
+      </li>
+      <li>
+         <a class="active"  href="teacher needs.html">
+            <span class="icon"><ion-icon name="print-outline"></ion-icon></span>
+            <span class="title">Teacher Needs</span>
+         </a>
+      </li>
+      <li>
+         <a href="monthly reports.html">
+            <span class="icon"><ion-icon name="calendar-number-outline"></ion-icon></span>
+            <span class="title">Monthly Reports</span>
+         </a>
+      </li>
+       <li>
+         <a href="notice board.html">
+            <span class="icon"><ion-icon name="reader-outline"></ion-icon></span>
+            <span class="title">Notice Board</span>
+         </a>
+      </li>
+       <li>
+         <a href="wall posters.html">
+            <span class="icon"><ion-icon name="image-outline"></ion-icon></span>
+            <span class="title">Wall Posters</span>
+         </a>
+      </li>
+      <li>
+         <a href="teacher stuff.html">
+            <span class="icon"><ion-icon name="easel-outline"></ion-icon></span>
+            <span class="title">Teacher Stuff</span>
+         </a>
+      </li>
+       <li>
+         <a href="student stuff.html">
+            <span class="icon"><ion-icon name="book-outline"></ion-icon></span>
+            <span class="title">Student Stuff</span>
+         </a>
+      </li>
+  </ul>
+</div>
+  <div id="main">
+
+  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+
+</div>
+<div class="menu">
+
+<button class="tablink" onclick="openPage('ESR', this, '#B8F5F5')">ESR</button>
+<button class="tablink" onclick="openPage('APGLI', this, 'green')" id="defaultOpen">APGLI</button>
+<button class="tablink" onclick="openPage('PRAN', this, 'blue')">PRAN</button>
+<button class="tablink" onclick="openPage('EHS', this, 'orange')">EHS</button>
+
+<div id="ESR" class="tabcontent">
+  
+</div>
+
+<div id="APGLI" class="tabcontent">
+
+<div class="container">
+         <div class="row">
+  
+<div class="lists">
+<h3>APGLI forms& Letters</h3>
+<br>
+<ul>
+<li><a href="applications/APGLI/DDO%20Covering%20Letter.pdf" target="-blank">DDO Covering Letter</a></li>
+<li><a href="applications/APGLI/Proposal%20Form.pdf" target="-blank">Proposal<br>(Fresh/Enhance)</a></li>
+<li><a href="applications/APGLI/GOOD%20HEALTH%20CERTIFICATE%20.pdf" target="-blank">Good Health certificate</a></li>
+<li><a href="applications/APGLI/MEDICAL%20LEAVE%20CERTIFICATE.pdf" target="-blank">Medical Leave not Avail</a></li>
+<li><a href="applications/APGLI/Nominee%20Form.pdf" target="-blank">Nominee Form</a></li>
+<li><a href="applications/APGLI/Declaration%20Regarding%20Loss%20of%20Policy.doc.pdf" target="-blank">Declaration regarding <br>loss of Policy</a></li>
+<li><a href="applications/APGLI/Loan%20Application.pdf" target="-blank">APGLI Loan Application</a></li>
+<li><a href="applications/APGLI/Loan%20Application.pdf" target="-blank">Refund-other than death</a></li>
+<li><a href="applications/APGLI/Refund%20Form(Death%20Claim).pdf" target="-blank">Refund(Death Claim)</a></li>
+<li><a href="applications/APGLI/Departmental%20Information%20Form%20death.pdf" target="-blank">Dept Information-Death</a></li>
+</ul>
+</div>
+<div class="lists">
+<br>
+<br>
+ <ul>
+
+<li><a href="applications/APGLI/Death%20Certificate(Insurance).pdf" target="-blank">Death Certificate(insurance)</a></li>
+<li><a href="applications/APGLI/Affidavit%20(Insurance).pdf" target="-blank">Affidavit(insurance)</a></li>
+<li><a href="applications/APGLI/Guardianship%20Declaration%20Certificate.pdf" target="-blank">Guardianship Declaration Certificate</a></li>
+<li><a href="applications/APGLI/Indemnity%20Bond.pdf" target="-blank">Indemnity Bond</a></li>
+<li><a href="applications/APGLI/Missing%20Credits%20Covering%20letter%20of%20the%20DDO.pdf" target="-blank">Missing Credits DDO Letter</a></li>
+<li><a href="applications/APGLI/missing%20credits%20individual%20letter.pdf" target="-blank">Missing Credits Individual Letter</a></li>
+<li><a href="applications/APGLI/MP_APGLI_Closure_Death_DDO_COVERING_LETTER.pdf" target="-blank">APGLI Closure DDO Letter</a></li>
+<li><a href="applications/APGLI/GOcopy.pdf" target="-blank">Go 20% Enhancement</a></li>
+</ul>
+</div>
+
+
+
+<div class="lists">
+<h3> APGLI Useful Links</h3>
+<br>
+<ul>
+<li><a href="http://apgli.ap.gov.in/Existing/PolicyBond.html" target="-blank">APGLI Bond Download</a></li>
+<li><a href="http://apgli.ap.gov.in/Existing/PolicyDetails.html" target="-blank">Policy Details</a></li>
+<li><a href="http://apgli.ap.gov.in/Existing/SearchPolicy.html" target="-blank">find Policy number </a></li>
+<li><a href="http://apgli.ap.gov.in/Existing/AnnualAccountSlip.html" target="-blank">Annual account slip</a></li>
+<li><a href="http://apgli.ap.gov.in/Existing/Status.html" target="-blank">Application Status</a></li>
+<li><a href="applications/APGLI/GIS%20info.pdf" target="-blank">GIS Information</a></li>
+</ul>
+</div>
+
+</div>
+</div>
+</div>
+
+
+<div id="PRAN" class="tabcontent">
+<div class="container">
+         <div class="row">
+            
+
+<div class="lists">
+<h3>PRAN(NPS) forms& Letters</h3>
+<br>
+     <ul>
+<li><a href="applications/PRAN/Subscriber%20Registration%20Form-Govt.pdf" target="-blank">Registration form</a></li>
+<li><a href="applications/PRAN/S5_DDO-Covering-letter-for-subs-registration1.pdf" target="-blank">DDO Covering Reg.Subscriber</a></li>
+<li><a href="applications/PRAN/S6_PAO-covering-letter-for-subscriber-registration1.pdf" target="-blank">DTO Covering Reg.Subscriber</a></li>
+<li><a href="applications/PRAN/S2-Subscriber_Details_Change%20form.pdf" target="-blank">Details Change form</a></li>
+<li><a href="applications/PRAN/UOS-S7-Subscriber's%20Photo%20and%20signature%20change1.pdf" target="-blank">Photo-sign change form</a></li>
+<li><a href="applications/PRAN/Annexure%20S8_Signature_Photo%20change_DDO%20covering_V%201.0.pdf" target="-blank">DDO Cover for photo-sign change</a></li>
+<li><a href="applications/PRAN/PAN%20&%20Aadhaar%20Updation%20Form.pdf" target="-blank">PAN&Aadhar Updation form</a></li>
+<li><a href="applications/PRAN/Family_Disability_Pension_Withdrawal_Form.pdf" target="-blank">Family/diability withdraw</a></li>
+</ul>
+</div>
+
+<div class="lists">
+<br>
+<br>
+               <ul>
+<li><a href="applications/PRAN/Exit%20from%20National%20Pension%20System%20Due%20to%20Superannuation%20&%20Incapacitation.pdf" target="-blank">Exit due to Superannuation</a></li>
+<li><a href="applications/PRAN/Form%20for%20Withdrawal%20by%20Claimant%20due%20to%20Death%20of%20Subscriber26.pdf" target="-blank">Exit due to Death</a></li>
+<li><a href="applications/PRAN/Complete%20Withdrawal%20Request%20Form%20GD.pdf" target="-blank">Withdraw Req.death</a></li>
+<li><a href="applications/PRAN/INDEMNITY%20BOND.pdf" target="-blank">Indemity Bond</a></li>
+<li><a href="applications/PRAN/RELINQUISHMENT%20DEED.pdf" target="-blank">Relinquishment Deed</a></li>
+<li><a href="applications/PRAN/Certification%20of%20death%20certificate%20if%20received%20in%20Vernacular%20Language.pdf" target="-blank">Death Certification DDO</a></li>
+<li><a href="applications/PRAN/Form_for_Partial_Withdrawal_under_NPS%20(1).pdf" target="-blank">Partial Withdraw Form</a></li>
+<li><a href="applications/PRAN/Affidavit%20for%20non%20submisstion%20of%20PRAN%20Card_subscriber.pdf" target="-blank">Affidavit non Submit PRAN</a></li>
+</ul>
+</div>
+
+<div class="lists">
+<h3> PRAN(NPS) Useful Links</h3>
+<br>
+<ul>
+<li><a href="https://cra-nsdl.com/CRA/" target="-blank">PRAN login</a></li>
+<li><a href="https://cra-nsdl.com/CRAOnline/asomPreLogin.html" target="-blank">Annual transaction Statment on Email</a></li>
+<li><a href="https://cra-nsdl.com/CRA/subRegReqSts.do" target="-blank">Reg/photo-sign update status</a></li>
+<li><a href="https://cra-nsdl.com/CRA/WdrLimAccessOnloadAction.do" target="-blank">Withdrawal Status</a></li>
+<li><a href="https://cra-nsdl.com/CRA/pranCardStatusInput.do" target="-blank">PRAN Dispatch Status</a></li>
+
+</ul>
+</div>
+
+
+</div>
+</div>
+  
+</div>
+
+<div id="EHS" class="tabcontent">
+  <h3>About</h3>
+  <p>Who we are and what we do.</p>
+</div>
+</div>
+
+<script>
+function openPage(pageName,elmnt,color) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+  document.getElementById(pageName).style.display = "block";
+  elmnt.style.backgroundColor = color;
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+   
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}
+</script>
+</body>
+</html>
