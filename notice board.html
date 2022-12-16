@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Notice Board</title>
+<link rel="icon" type="image/x-icon" href="gallery/teachlogo31.png">
+<link rel="stylesheet"  type="text/css" href="style.css">
+<link href='https://fonts.googleapis.com/css?family=Akaya Telivigala' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap' rel='stylesheet'>
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Ubuntu',sans-serif;
+   }
+
+body{
+    min-height:100vh;
+    background:#fff;
+   }
+
+.navigation{
+          position:fixed;
+          inset:20px;
+          background:#150AF8;
+          width:80px;
+          border-left:10px solid #7D11EC;
+          border-radius:20px;
+          overflow:hidden;
+          transition:0.5s;
+         }
+
+.navigation.active{
+              width:200px;
+              border-radius:20px;
+             }
+
+
+.navigation ul{
+            position:absolute;
+            top:0;
+            left:0;
+            width:100%;
+           }
+
+.navigation ul li {
+               position:relative;
+               list-style:none;
+               width:100%;
+               border-top-left-radius:30px;
+               border-bottom-left-radius:30px;
+              }
+
+.navigation ul li:hover{
+                background:#fff;
+                }
+.navigation ul li a.active{
+                      background:#fff;
+                      border-top-left-radius:30px;
+                      border-bottom-left-radius:30px;
+                    }
+
+
+.navigation ul li:nth-child(1){
+                     top:20px;
+                     margin-bottom:40px;
+                     background:none;
+                   }
+
+.navigation ul li a{
+                position:relative;
+                display:block;
+                width:100%;
+                display:flex;
+                text-decoration:none;
+                color:#fff;
+               }
+
+.navigation ul li:hover:not(:first-child) a,
+.navigation ul li a.active{
+             color:#150AF8;
+             }
+.icon{
+      position:relative;
+      display:block;
+      min-width:60px;
+      height:50px;
+      line-height:60px;
+      text-align:center;
+     }
+.icon ion-icon{
+          font-size:1.75em;
+          }
+
+.title{
+        position:relative;
+        display:block;
+        padding:0 10px;
+        height:50px;
+        line-height:50px;
+        text-align:start;
+        white-space:nowrap;
+      }
+.navigation .closebtn {
+                 position: absolute;
+                 bottom: 0;
+                 right: 25px;
+                 font-size: 36px;
+                 text-align:center;
+             }
+.navigation.active.closebtn{
+position: absolute;
+                 bottom: 0;
+                 right: 25px;
+                 font-size: 36px;
+                 margin-left: 40px;}
+.navigation a {
+              text-decoration:none;
+              color:#fff;}
+              .navigation li {
+               list-style:none;
+               }
+ /*curve outside*/
+.navigation ul li:not(:first-child):hover a::before,
+.navigation ul li a.active::before{
+               content:'';
+               position:absolute;
+               right:0;
+               top:-40px;
+               width:40px;
+               height:40px;
+               background:transparent;
+               border-radius:50%;
+               box-shadow:30px 30px 0 10px #fff;
+               pointer-events:none;
+             }
+
+.navigation ul li:not(:first-child):hover a::after,
+.navigation ul li a.active::after{
+               content:'';
+               position:absolute;
+               right:0;
+               bottom:-40px;
+               width:40px;
+               height:40px;
+               background:transparent;
+               border-radius:50%;
+               box-shadow:30px -30px 0 10px #fff;
+               pointer-events:none;
+               }
+
+#main {
+ margin-left:50px;
+  transition: margin-left .5s;
+  padding: 20px;
+}
+
+@media screen and (max-height: 450px) {
+  .navigation {padding-top: 15px;}
+  .navigation a {font-size: 18px;}
+
+}
+@media(max-width:992px){
+.navigation{
+left:0;}
+.navigation.active{
+left:0;
+width:200px;}
+.main{
+width:100%;
+left:0;
+}
+.main.active{
+width:calc(100%-200px);
+left:200px;
+}
+
+}
+/*paper CSS*/
+:root {
+  --paper-shadow: #c9bf8d;
+}
+
+
+.paper {
+  --paper-dark: #e5c93d;
+  --paper-color: #ffed87;
+ display: flex;
+float:left;
+margin-left:15px;
+left:300px;
+  position: relative;
+  left:300px;
+  display: flex;
+  justify-content: center;
+  width:200px;
+  height: 100px;
+  background: linear-gradient(
+    135deg,
+    var(--paper-dark),
+    30%,
+    var(--paper-color)
+  );
+  box-shadow: 3px 3px 2px var(--paper-shadow);
+  transform: rotate(10deg);
+  transform-origin: top left;
+
+}
+.paper:hover{
+width:220px;
+height:110px;
+
+}
+.paper a {
+  margin: auto;
+text-decoration:none;
+color:black;
+font-weight:900;
+}
+.paper a:hover{
+color:#150AF8;
+font-size:20px;}
+
+.pin {
+  --pin-color: #d02627;
+  --pin-dark: #9e0608;
+  --pin-light: #fc7e7d;
+
+  position: absolute;
+  left: 20px;
+  width: 60px;
+  height: 50px;
+}
+
+.shadow {
+  position: absolute;
+  top: 18px;
+  left: -8px;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: radial-gradient(var(--paper-shadow), 20%, rgba(201, 191, 141, 0));
+}
+
+.metal {
+  position: absolute;
+  width: 5px;
+  height: 20px;
+  background: linear-gradient(to right, #808080, 40%, #eae8e8, 50%, #808080);
+  border-radius: 0 0 30% 30%;
+  transform: rotate(50deg);
+  transform-origin: bottom left;
+  top: 15px;
+  border-bottom: 1px solid #808080;
+}
+
+.bottom-circle {
+  position: absolute;
+  right: 15px;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: var(--pin-color);
+  background: radial-gradient(
+    circle at bottom right,
+    var(--pin-light),
+    25%,
+    var(--pin-dark),
+    90%,
+    var(--pin-color)
+  );
+}
+
+/* Barrel */
+.bottom-circle::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -2px;
+  width: 20px;
+  height: 30px;
+  transform: rotate(55deg);
+  transform-origin: 100% 100%;
+  border-radius: 0 0 40% 40%;
+  background: linear-gradient(
+    to right,
+    var(--pin-dark),
+    30%,
+    var(--pin-color),
+    90%,
+    var(--pin-light)
+  );
+}
+
+/* Top circle */
+.bottom-circle::after {
+  content: "";
+  position: absolute;
+  right: -10px;
+  top: -5px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at right,
+    var(--pin-light),
+    30%,
+    var(--pin-color),
+    var(--pin-dark) 80%
+  );
+}
+
+
+.row {
+
+  float: left;
+  width: 100%;
+  padding: 10px;
+
+}
+
+/* Clear floats after the columns */
+.column:after {
+  content: "";
+  display:flex;
+
+  clear: both;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 900px) {
+  .column  {
+    width: 100%;
+margin-bottom:10px;
+  }
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column  {
+    width: 100%;
+  }}
+
+
+</style>
+</head>
+<body>
+<div id="mySidenav" class="navigation">
+<li><a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a></li>
+   <ul>
+      <li>
+         <a href="index.html">
+            <span class="icon"><img src="gallery/teachlogo3.png" width="50px" height="50px"></span>
+            <span class="title">Teacher Stuff</span>
+         </a>
+      </li>
+       <li>
+           <a href="all sites.html">
+              <span class="icon"><ion-icon name="logo-web-component"></ion-icon></span>
+             <span class="title">ALL Sites</span>
+           </a>
+       </li>
+        <li>
+         <a href="app links.html">
+            <span class="icon"><ion-icon name="calculator-outline"></ion-icon></span>
+            <span class="title">App Links</span>
+         </a>
+      </li>
+      <li>
+         <a href="teacher needs.html">
+            <span class="icon"><ion-icon name="print-outline"></ion-icon></span>
+            <span class="title">Teacher Needs</span>
+         </a>
+      </li>
+      <li>
+         <a href="monthly reports.html">
+            <span class="icon"><ion-icon name="calendar-number-outline"></ion-icon></span>
+            <span class="title">Monthly Reports</span>
+         </a>
+      </li>
+       <li>
+         <a class="active" href="notice board.html">
+            <span class="icon"><ion-icon name="reader-outline"></ion-icon></span>
+            <span class="title">Notice Board</span>
+         </a>
+      </li>
+       <li>
+         <a href="wall posters.html">
+            <span class="icon"><ion-icon name="image-outline"></ion-icon></span>
+            <span class="title">Wall Posters</span>
+         </a>
+      </li>
+      <li>
+         <a href="teacher stuff.html">
+            <span class="icon"><ion-icon name="easel-outline"></ion-icon></span>
+            <span class="title">Teacher Stuff</span>
+         </a>
+      </li>
+       <li>
+         <a href="student stuff.html">
+            <span class="icon"><ion-icon name="book-outline"></ion-icon></span>
+            <span class="title">Student Stuff</span>
+         </a>
+      </li>
+  </ul>
+
+</div>
+  <div id="main">
+
+
+  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+</div>
+<div class="column">
+<div class="row">
+  <div class="paper">
+  <div class="pin">
+    <div class="shadow"></div>
+    <div class="metal"></div>
+    <div class="bottom-circle"></div>
+  </div>
+  <a href="notice%20board/MDM%20Menu.pdf" target="-blank">MDM menu</a>
+</div>
+
+<div class="paper">
+  <div class="pin">
+    <div class="shadow"></div>
+    <div class="metal"></div>
+    <div class="bottom-circle"></div>
+  </div>
+  <a href="notice%20board/School%20assembly.pdf" target="-blank">School Assembly</a>
+</div>
+  
+<div class="paper">
+  <div class="pin">
+    <div class="shadow"></div>
+    <div class="metal"></div>
+    <div class="bottom-circle"></div>
+  </div>
+  <a href="notice%20board/teachhers%20details.pdf" target="-blank">Teacher Details</a>
+</div>
+</div>
+<div class="row">
+
+<div class="paper">
+  <div class="pin">
+    <div class="shadow"></div>
+    <div class="metal"></div>
+    <div class="bottom-circle"></div>
+  </div>
+ <a href="notice%20board/1,2%20TIME%20TABLE.pdf" target="-blank">1 to 2 Time table</a>
+</div>
+
+<div class="paper">
+  <div class="pin">
+    <div class="shadow"></div>
+    <div class="metal"></div>
+    <div class="bottom-circle"></div>
+  </div>
+  <a href="notice%20board/3%20to%205%20TIME%20TABLE.pdf" target="-blank">3 to 5 Time table</a>
+</div>
+
+<div class="paper">
+  <div class="pin">
+    <div class="shadow"></div>
+    <div class="metal"></div>
+    <div class="bottom-circle"></div>
+  </div>
+  <a href="notice%20board/Exams%20Schedule%202022-23.pdf" target="-blank">Exams schedule</a>
+</div>
+</div>
+<div class="row">
+<div class="paper">
+  <div class="pin">
+    <div class="shadow"></div>
+    <div class="metal"></div>
+    <div class="bottom-circle"></div>
+  </div>
+  <a href="notice%20board/Contacts%20for%20School.pdf" target="-blank">Contacts for School</a>
+</div>
+
+<div class="paper">
+  <div class="pin">
+    <div class="shadow"></div>
+    <div class="metal"></div>
+    <div class="bottom-circle"></div>
+  </div>
+<a href="notice%20board/instructions%20to%20CCH.pdf" target="-blank">CCH&ayah Instructions</a>
+</div>
+
+<div class="paper">
+  <div class="pin">
+    <div class="shadow"></div>
+    <div class="metal"></div>
+    <div class="bottom-circle"></div>
+  </div>
+  <a href="notice%20board/Needs&%20Targets%20of%20school.pdf" target="-blank">Needs&targets of School</a>
+</div>
+        </div>
+</div>
+                 
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}
+</script>
+
+
+</body>
+</html>
