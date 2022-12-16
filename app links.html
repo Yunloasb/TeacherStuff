@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Teacher Stuff</title>
+<title>App links</title>
 <link rel="icon" type="image/x-icon" href="gallery/teachlogo31.png">
 <link rel="stylesheet"  type="text/css" href="style.css">
 <link href='https://fonts.googleapis.com/css?family=Akaya Telivigala' rel='stylesheet'>
@@ -178,42 +178,114 @@ position: absolute;
        width:calc(100%-200px);
         left:200px;
          }
-
 }
-/*paper CSS*/
-         .image{
-width:70%;
-position:relative;
+
+/*menu css*/
+
+.leaderboard {
+ position:relative;
 left:300px;
+  max-width: 490px;
+  width: 100%;
+  border-radius: 12px;
 }
-
-.image-container {
+.leaderboard header {
 position:relative;
-  
-  background-image:url("gallery/edu24.jpg");
-  background-size:100% 100%;
+  --start: 15%;
+  height: 130px;
+  background-image: repeating-radial-gradient(circle at var(--start), transparent 0%, transparent 10%, rgba(54, 89, 219, 0.33) 10%, rgba(54, 89, 219, 0.33) 17%), linear-gradient(to right, #5b7cfa, #3659db);
+  color: #fff;
+  border-radius: 12px 12px 0 0;
+  overflow: hidden;
+}
+.leaderboard header .leaderboard__title {
  
-  height: 300px;
+ text-align:center;
+  z-index: 2;
+  top: 50%;
+  right: calc(var(--start) * .75);
+  transform: translateY(-50%);
+  text-transform: uppercase;
+  margin: 0;
 }
-
-.text {
-  position:relative;
-  background-color: white;
-  color: black;
-  font-size:7vw; 
-  font-weight: bold;
-  margin: 0 auto;
-  padding:20px 0;
-  width:90%;
-height:90%;
-   text-align:center;
-  position: absolute;
-  top:50%;
-  left: 50%;
+.leaderboard header .leaderboard__title span {
+  display: block;
+}
+.leaderboard header .leaderboard__title--top {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 6.5px;
+}
+.leaderboard header .leaderboard__title--bottom {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 3.55px;
+  opacity: 0.65;
+  transform: translateY(-2px);
+}
+.leaderboard header .leaderboard__icon {
+position:relative;
+  fill: #fff;
+  opacity: 0.35;
+  width: 50px;
+  top: 50%;
+  left: var(--start);
   transform: translate(-50%, -50%);
-  mix-blend-mode: screen;
+}
+.leaderboard__profiles {
+  background-color: #fff;
+  border-radius: 0 0 12px 12px;
+  padding: 15px 15px 20px;
+  display: grid;
+  row-gap: 8px;
+}
+.leaderboard__profile {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  align-items: center;
+  padding: 10px 30px 10px 10px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 5px 7px -1px rgba(51, 51, 51, 0.23);
+  cursor: pointer;
+  transition: transform 0.25s cubic-bezier(0.7, 0.98, 0.86, 0.98), box-shadow 0.25s cubic-bezier(0.7, 0.98, 0.86, 0.98);
+  background-color: #fff;
+}
+.leaderboard__profile:hover {
+  transform: scale(1.2);
+  box-shadow: 0 9px 47px 11px rgba(51, 51, 51, 0.18);
+}
+.leaderboard__picture {
+  max-width: 100%;
+  width: 60px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 10px #ebeef3, 0 0 0 22px #f3f4f6;
+}
+.leaderboard__name a {
+ text-decoration:none;
+  color: #979cb0;
+  font-weight: 600;
+  font-size: 20px;
+  letter-spacing: 0.64px;
+  margin-left: 12px;
+}
+.leaderboard__value {
+ 
+  color: #35d8ac;
+  font-weight: 700;
+  font-size: 20px;
+  text-align: right;
+}
+.leaderboard__value > span {
+  opacity: 0.8;
+  font-weight: 600;
+  font-size: 13px;
+  margin-left: 3px;
 }
 
+.leaderboard {
+  box-shadow: 0 0 40px -10px rgba(0, 0, 0, 0.4);
+}
 
 </style>
 </head>
@@ -221,7 +293,7 @@ height:90%;
 <div id="mySidenav" class="navigation">
 <li><a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a></li>
    <ul>
-       <li>
+      <li>
          <a href="index.html">
             <span class="icon"><img src="gallery/teachlogo3.png" width="50px" height="50px"></span>
             <span class="title">Teacher Stuff</span>
@@ -234,7 +306,7 @@ height:90%;
            </a>
        </li>
         <li>
-         <a href="app links.html">
+         <a class="active" href="app links.html">
             <span class="icon"><ion-icon name="calculator-outline"></ion-icon></span>
             <span class="title">App Links</span>
          </a>
@@ -258,13 +330,13 @@ height:90%;
          </a>
       </li>
        <li>
-         <a  href="wall posters.html">
+         <a href="wall posters.html">
             <span class="icon"><ion-icon name="image-outline"></ion-icon></span>
             <span class="title">Wall Posters</span>
          </a>
       </li>
       <li>
-         <a   class="active" href="teacher stuff.html">
+         <a href="teacher stuff.html">
             <span class="icon"><ion-icon name="easel-outline"></ion-icon></span>
             <span class="title">Teacher Stuff</span>
          </a>
@@ -282,14 +354,97 @@ height:90%;
   <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
 
 </div>
-<div class="image">
-           
-<div class="image-container">
-  <div class="text">COMING <br>SOON</div>
-</div>
+         <div class="column">
+<div class="row">
 
-</div>
+            
+        <article class="leaderboard">
+  <header>
 
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 511.999 511.999" style="enable-background:new 0 0 511.999 511.999;" xml:space="preserve" class="leaderboard__icon">
+     
+    </svg>
+
+    <h1 class="leaderboard__title"><span class="leaderboard__title--top">ALL APPS</span><span class="leaderboard__title--bottom">Latest version</span></h1>
+  </header>
+  
+  <div class="leaderboard__profiles">
+    <article class="leaderboard__profile">
+      <img src="app image\imms.jpg" alt="IMMS APP" class="leaderboard__picture">
+      <span class="leaderboard__name"><a href="https://play.google.com/store/apps/details?id=com.ap.imms" target="-blank">IMMS APP</a></span>
+      <span class="leaderboard__value">1.5.0</span>
+    </article>
+
+         <article class="leaderboard__profile">
+      <img src="app image/school attendance.jpg" alt="School Attendance" class="leaderboard__picture">
+      <span class="leaderboard__name"><a href="https://play.google.com/store/apps/details?id=com.ap.schoolattendance" target="-blank">School Attendance</a></span>
+      <span class="leaderboard__value">2.1.8</span>
+    </article>
+
+        <article class="leaderboard__profile">
+      <img src="app image/cr.png" alt="Consistant Rhythm" class="leaderboard__picture">
+      <span class="leaderboard__name"><a href="https://play.google.com/store/apps/details?id=com.cr_app.vsws_cr_android_app" target="-blank">Consistant Rhythm</a></span>
+      <span class="leaderboard__value">7.1.4</span>
+    </article>
+      
+         <article class="leaderboard__profile">
+      <img src="app image/AM.png" alt="Academic monitoring" class="leaderboard__picture">
+      <span class="leaderboard__name"><a href="https://play.google.com/store/apps/details?id=com.ap.sims" target="-blank">Academic monitoring</a></span>
+      <span class="leaderboard__value">1.1.2</span>
+    </article>
+
+         <article class="leaderboard__profile">
+      <img src="app image/nadunedu.jpg" alt="Nadu Nedu" class="leaderboard__picture">
+      <span class="leaderboard__name"><a href="https://nadunedu.se.ap.gov.in/stmsworks/Data/STMS_P_2.6.2.apk" target="-blank">Nadu Nedu</a></span>
+      <span class="leaderboard__value">2.6.2</span>
+    </article>
+
+
+          <article class="leaderboard__profile">
+      <img src="app image/jvk.jpg" alt="JVK" class="leaderboard__picture">
+      <span class="leaderboard__name"><a href="https://nadunedu.se.ap.gov.in/JVK/APK/JVK_P_1.2.2.apk" target="-blank">JVK</a></span>
+      <span class="leaderboard__value">1.2.2</span>
+    </article>
+
+         <article class="leaderboard__profile">
+      <img src="app image/diksha.png" alt="Diksha" class="leaderboard__picture">
+      <span class="leaderboard__name"><a href="https://play.google.com/store/apps/details?id=in.gov.diksha.app" target="-blank">Diksha</a></span>
+      <span class="leaderboard__value">5.0.1061</span>
+    </article>
+
+           <article class="leaderboard__profile">
+      <img src="app image/NPS.jpg" alt="NPS(PRAN)" class="leaderboard__picture">
+      <span class="leaderboard__name"><a href="https://play.google.com/store/apps/details?id=nps.nps" target="-blank">NPS(PRAN)</a></span>
+      <span class="leaderboard__value">14.0.22</span>
+    </article>
+
+        <article class="leaderboard__profile">
+      <img src="app image/herb.png" alt="Payroll Herb" class="leaderboard__picture">
+      <span class="leaderboard__name"><a href="https://play.google.com/store/apps/details?id=in.apcfss.in.herb.emp" target="-blank">Payroll Herb</a></span>
+      <span class="leaderboard__value">1.6</span>
+    </article>
+
+          <article class="leaderboard__profile">
+      <img src="app image/byjus.jpg" alt="Byju's" class="leaderboard__picture">
+      <span class="leaderboard__name"><a href="https://play.google.com/store/apps/details?id=com.byjus.thelearningapp" target="-blank">Byju's</a></span>
+      <span class="leaderboard__value">10.14.0.15300</span>
+    </article>
+
+        
+    
+  </div>
+</div>
+    </div>
+</div>
+<script>
+/*
+
+Original design: https://dribbble.com/shots/2342688-Leaderboard-Day-019-dailyui
+
+Trophy SVG: https://www.flaticon.com/free-icon/trophy_263056
+
+*/
+</script>
 
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
